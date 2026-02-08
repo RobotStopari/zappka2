@@ -1,0 +1,21 @@
+/* ===============================
+   LECTOR CHIPS
+=============================== */
+.lector-chip {
+  display: inline-flex;
+  align-items: center;
+  padding: 6px 14px;
+  border-radius: 20px;
+  color: #fff;
+  font-weight: 500;
+  font-size: 0.95rem;
+  margin: 4px 6px 4px 0;
+  cursor: pointer;
+  transition: transform 0.2s ease, box-shadow 0.2s ease, opacity 0.25s ease;
+}
+
+.lector-chip:hover {
+  transform: translateY(-1px);
+  /* tiny lift */
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.15);
+}

@@ -1,0 +1,28 @@
+/* ===============================
+   BUTTONS
+=============================== */
+.btn-primary {
+  background-color: #0b8434;
+  border: none;
+  transition: all 0.2s ease;
+}
+
+.btn-primary:hover {
+  background-color: #0a6f2c;
+}
+
+.btn-danger {
+  background-color: #d00103;
+}
+
+.btn-danger:hover {
+  background-color: #a70002;
+}
+
+.btn-warning {
+  background-color: #ffad0b;
+}
+
+.btn-warning:hover {
+  background-color: #e09a08;
+}

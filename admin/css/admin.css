@@ -1,0 +1,50 @@
+body {
+  background: linear-gradient(120deg, #f8fafc, #e9ecef);
+  min-height: 100vh;
+}
+
+.container-admin {
+  max-width: 1000px;
+  margin: 40px auto;
+}
+
+.card {
+  border-radius: 18px;
+  border: none;
+  box-shadow: 0 2px 16px rgba(0, 0, 0, .06);
+}
+
+.fade-in {
+  animation: fadeIn .35s ease;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(8px);
+  }
+
+  to {
+    opacity: 1;
+    transform: none;
+  }
+}
+
+.lector-chip {
+  display: inline-flex;
+  align-items: center;
+  padding: 6px 12px;
+  border-radius: 20px;
+  color: #fff;
+  /* text always white on colored background */
+  margin: 4px 6px 4px 0;
+  cursor: pointer;
+  font-weight: 500;
+  font-size: 0.9rem;
+  transition: transform 0.15s ease, box-shadow 0.15s ease;
+}
+
+.lector-chip:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 3px 10px rgba(0, 0, 0, 0.2);
+}
