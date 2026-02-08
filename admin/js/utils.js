@@ -10,3 +10,4 @@ export function formatTime(ts) {
 export function toLocal(ts) {
   return ts.toDate().toISOString().slice(0, 16);
 }
+

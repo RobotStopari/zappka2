@@ -1,0 +1,95 @@
+/* ================================
+   RESPONSIVE DESIGN
+   ================================ */
+@media (max-width: 768px) {
+  .container-admin {
+    margin: 1rem auto;
+  }
+
+  .admin-header {
+    padding: 1.5rem;
+  }
+
+  /* admin-header removed */
+  font-size: 1.1rem;
+}
+
+.logo-nav {
+  height: 35px;
+}
+
+/* Lectors list: compact rows; switch to two columns on wider screens */
+#lectors-list {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 0.12rem 0.5rem;
+  align-items: start;
+}
+
+.lector-card {
+  flex-direction: column;
+  text-align: center;
+}
+
+@media (min-width: 768px) {
+  #lectors-list {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
+
+@media (max-width: 576px) {
+  :root {
+    font-size: 14px;
+  }
+
+  .admin-header {
+    padding: 1rem;
+    border-left: 4px solid var(--primary-green);
+  }
+
+  .admin-header h1 {
+    font-size: 1.5rem;
+  }
+
+  .card-header-admin {
+    padding: 1rem 1rem;
+    font-size: 1rem;
+  }
+
+  .card-body {
+    padding: 1rem;
+  }
+
+  .logo-nav {
+    height: 30px;
+  }
+
+  .navbar-brand {
+    font-size: 1rem;
+  }
+
+  .btn-custom-primary,
+  .btn-danger {
+    padding: 0.5rem 1rem;
+    font-size: 0.9rem;
+  }
+
+  #add-lector-form .col-md-4,
+  #add-lector-form .col-md-2 {
+    width: 100%;
+  }
+
+  .form-control-admin {
+    padding: 0.6rem 0.75rem;
+    font-size: 0.9rem;
+  }
+
+  .lector-color-preview {
+    width: 40px;
+    height: 40px;
+  }
+
+  .lector-card {
+    padding: 1rem;
+  }
+}

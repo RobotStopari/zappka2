@@ -21,17 +21,14 @@ export async function renderLectors() {
   });
 
   sorted.forEach(l => {
-    const span = document.createElement("span");
-    span.className = "lector-chip";
-    span.style.backgroundColor = l.color || "#6c757d";
-
-    // Display fallback if nick is empty
-    span.textContent = l.nick ? `${l.nick} — ${l.name}` : l.name;
-
-    // open edit modal
-    span.addEventListener("click", () => openLectorPopup(l.id));
-
-    list.appendChild(span);
+    const wrap = document.createElement('div');
+    wrap.className = 'lector-chip';
+    wrap.innerHTML = `
+      <div class="lector-bubble-check" style="background: ${l.color || '#6c757d'}"></div>
+      <div class="lector-chip-label">${l.nick ? `<strong>${l.nick}</strong><span class=\"text-muted ms-2\">${l.name}</span>` : `<strong>${l.name}</strong>`}</div>
+    `;
+    wrap.addEventListener('click', () => openLectorPopup(l.id));
+    list.appendChild(wrap);
   });
 }
 

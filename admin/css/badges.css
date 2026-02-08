@@ -1,0 +1,30 @@
+/* ================================
+   BADGES
+   ================================ */
+.bg-custom-primary {
+  background: linear-gradient(135deg, var(--primary-green) 0%, #0a6b2a 100%) !important;
+  color: white !important;
+  box-shadow: 0 4px 8px rgba(11, 132, 52, 0.2);
+}
+
+.bg-custom-secondary {
+  background: linear-gradient(135deg, var(--secondary-orange) 0%, #ff9800 100%) !important;
+  color: white !important;
+  box-shadow: 0 4px 8px rgba(255, 173, 11, 0.2);
+}
+
+.bg-custom-tertiary {
+  background: linear-gradient(135deg, var(--tertiary-red) 0%, #c10100 100%) !important;
+  color: white !important;
+  box-shadow: 0 4px 8px rgba(208, 1, 3, 0.2);
+}
+
+.badge {
+  padding: 0.6rem 1rem;
+  font-size: 0.85rem;
+  font-weight: 600;
+  border-radius: 6px;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+}

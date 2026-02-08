@@ -1,0 +1,13 @@
+/* ================================
+   COLOR VARIABLES
+   ================================ */
+:root {
+  --primary-green: #0b8434;
+  --secondary-orange: #ffad0b;
+  --tertiary-red: #d00103;
+  --text-dark: #212529;
+  --text-light: #6c757d;
+  --bg-light: #f8f9fa;
+  --border-color: #e9ecef;
+  --ui-font: 'Baloo 2', 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}

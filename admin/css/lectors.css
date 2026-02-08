@@ -1,0 +1,94 @@
+/* ================================
+   LECTORS LIST & CARDS
+   ================================ */
+.lector-card {
+  background: white;
+  border: 2px solid var(--border-color);
+  border-radius: 10px;
+  padding: 1.5rem;
+  transition: all 0.3s ease;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  position: relative;
+  overflow: hidden;
+}
+
+.lector-card::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 4px;
+  background: linear-gradient(90deg, var(--primary-green), var(--secondary-orange), var(--tertiary-red));
+  transition: height 0.3s ease;
+}
+
+.lector-card:hover {
+  box-shadow: 0 0 16px rgba(11, 132, 52, 0.3), 0 8px 20px rgba(0, 0, 0, 0.08);
+  border-color: var(--primary-green);
+}
+
+.lector-card:hover::before {
+  height: 6px;
+}
+
+.lector-color-preview {
+  width: 50px;
+  height: 50px;
+  border-radius: 8px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+  transition: transform 0.3s ease;
+}
+
+.lector-card:hover .lector-color-preview {
+  transform: scale(1.1);
+}
+
+.lector-info h6 {
+  margin-bottom: 0.25rem;
+  color: var(--text-dark);
+  font-weight: 700;
+}
+
+.lector-info small {
+  color: var(--text-light);
+}
+
+/* ================================
+   LECTOR CHIP
+   ================================ */
+.lector-chip {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.12rem 0.35rem;
+  border-radius: 6px;
+  color: var(--text-dark);
+  margin: 0.08rem 0.35rem 0.08rem 0;
+  cursor: pointer;
+  font-weight: 600;
+  font-size: 1.1rem;
+  transition: all 0.12s ease;
+}
+
+.lector-chip:hover {
+  background: rgba(0, 0, 0, 0.03);
+}
+
+.lector-chip-label {
+  color: var(--text-dark);
+}
+
+.lector-chip strong {
+  font-weight: 700;
+}
+
+/* make bubble smaller to match compact chips */
+.lector-bubble-check {
+  width: 20px;
+  height: 20px;
+  border-radius: 50%;
+}

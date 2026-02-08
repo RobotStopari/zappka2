@@ -1,0 +1,262 @@
+/* ================================
+   FORMS
+   ================================ */
+.form-control-admin {
+  border: 2px solid var(--border-color);
+  padding: 0.7rem 1rem;
+  border-radius: 8px;
+  font-size: 0.95rem;
+  transition: all 0.3s ease;
+  background-color: white;
+}
+
+.form-control-admin:focus {
+  border-color: var(--primary-green);
+  box-shadow: 0 0 0 0.25rem rgba(11, 132, 52, 0.15);
+  outline: none;
+  background-color: white;
+}
+
+/* Unified arrow for selects and custom toggles */
+/* arrow only on non-select wrappers */
+.with-arrow:not(select) {
+  position: relative;
+}
+
+.with-arrow:not(select)::after {
+  content: "";
+  position: absolute;
+  right: 1rem;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 12px;
+  height: 8px;
+  /* use CSS triangle for consistent single-color arrow */
+  width: 0;
+  height: 0;
+  border-left: 6px solid transparent;
+  border-right: 6px solid transparent;
+  border-top: 6px solid var(--primary-green);
+  pointer-events: none;
+}
+
+.with-arrow:not(select).active::after {
+  transform: translateY(-50%) rotate(180deg);
+}
+
+/* Ensure dropdown-toggle uses only the unified arrow (no extra backgrounds) */
+.dropdown-toggle.with-arrow {
+  background-image: none !important;
+}
+
+.dropdown-toggle.with-arrow::before {
+  display: none !important;
+}
+
+.dropdown-toggle.with-arrow::after {
+  display: block;
+}
+
+/* keep extra padding on selects using the helper class and show arrow via background-image */
+/* select wrapper + select rules: use wrapper pseudo-element for arrow to avoid native artifacts */
+.select-wrapper.with-arrow {
+  position: relative;
+  display: block;
+}
+
+.select-wrapper.with-arrow select {
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+  padding-right: 2.5rem;
+}
+
+.select-wrapper.with-arrow::after {
+  content: "";
+  position: absolute;
+  right: 1rem;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 0;
+  height: 0;
+  border-left: 6px solid transparent;
+  border-right: 6px solid transparent;
+  border-top: 6px solid var(--primary-green);
+  pointer-events: none;
+}
+
+.select-wrapper.with-arrow.active::after {
+  transform: translateY(-50%) rotate(180deg);
+}
+
+.form-label {
+  color: var(--text-dark);
+  margin-bottom: 0.5rem;
+  font-size: 0.95rem;
+}
+
+/* ================================
+   LECTORS DROPDOWN
+   ================================ */
+.lectors-dropdown {
+  position: relative;
+  width: 100%;
+}
+
+.dropdown-toggle {
+  border: 2px solid var(--border-color);
+  border-radius: 8px;
+  padding: 0.7rem 1rem;
+  background-color: white;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  transition: all 0.3s ease;
+  min-height: 42px;
+}
+
+.dropdown-toggle:hover {
+  border-color: var(--primary-green);
+}
+
+/* icon removed; arrow is provided via .with-arrow::after */
+
+.selected-bubbles {
+  display: flex;
+  gap: 0.5rem;
+  align-items: center;
+  flex-wrap: wrap;
+  flex: 1;
+}
+
+/* Bubble styling for selected lectors */
+.lector-bubble-selected {
+  width: 28px;
+  height: 28px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: white;
+  font-size: 0.7rem;
+  font-weight: bold;
+  cursor: pointer;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.lector-bubble-selected:hover {
+  transform: scale(1.1);
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.15);
+}
+
+.dropdown-menu-custom {
+  position: absolute;
+  top: 100%;
+  left: 0;
+  right: 0;
+  background: white;
+  border: 2px solid var(--border-color);
+  border-top: none;
+  border-radius: 0 0 8px 8px;
+  max-height: 0;
+  overflow: hidden;
+  transition: max-height 0.3s ease;
+  z-index: 1000;
+}
+
+.dropdown-menu-custom.show {
+  max-height: 400px;
+  overflow-y: auto;
+}
+
+/* Lector check items in dropdown */
+.lector-check-item {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  padding: 0.75rem 1rem;
+  border-bottom: 1px solid var(--border-color);
+  cursor: pointer;
+  transition: background-color 0.2s ease;
+}
+
+.lector-check-item:last-child {
+  border-bottom: none;
+}
+
+.lector-check-item:hover {
+  background-color: var(--bg-light);
+}
+
+.lector-bubble-check {
+  width: 32px;
+  height: 32px;
+  border-radius: 50%;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.15);
+  transition: all 0.3s ease;
+  border: 2px solid white;
+  cursor: pointer;
+  position: relative;
+  flex-shrink: 0;
+}
+
+.lector-check-content {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  flex: 1;
+}
+
+.lector-checkbox {
+  position: absolute;
+  opacity: 0;
+  width: 1px;
+  height: 1px;
+  pointer-events: none;
+}
+
+/* Remove hover / tooltip effects for bubbles that appear inside the lectors dropdown/select UI */
+.lectors-dropdown .lector-bubble,
+.lectors-dropdown .lector-bubble-check,
+.lectors-dropdown .selected-bubbles .lector-bubble {
+  transition: none;
+}
+
+.lectors-dropdown .lector-bubble:hover,
+.lectors-dropdown .lector-bubble-check:hover,
+.lectors-dropdown .selected-bubbles .lector-bubble:hover {
+  transform: none !important;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.15) !important;
+}
+
+.lectors-dropdown .lector-bubble::after,
+.lectors-dropdown .lector-bubble::before,
+.lectors-dropdown .lector-bubble-check::after,
+.lectors-dropdown .lector-bubble-check::before,
+.lectors-dropdown .selected-bubbles .lector-bubble::after,
+.lectors-dropdown .selected-bubbles .lector-bubble::before {
+  display: none !important;
+  visibility: hidden !important;
+  opacity: 0 !important;
+}
+
+.lector-checkbox:checked {
+  background-color: var(--primary-green);
+  border-color: var(--primary-green);
+}
+
+.lector-check-label {
+  cursor: pointer;
+  margin: 0;
+  font-size: 0.9rem;
+  flex: 1;
+}
+
+/* ================================
+   TIME INPUT STYLING
+   ================================ */
+input[type="datetime-local"]::placeholder {
+  color: var(--text-muted);
+}

@@ -1,0 +1,32 @@
+/* ================================
+   MODAL STYLES
+   ================================ */
+.modal-content {
+  border-radius: 12px;
+  overflow: hidden;
+}
+
+/* Ensure modals appear above decorative particles and custom dropdowns */
+.modal-backdrop {
+  z-index: 10999 !important;
+}
+
+.modal {
+  z-index: 11000 !important;
+}
+
+.bg-gradient {
+  background: linear-gradient(135deg, var(--primary-green) 0%, var(--secondary-orange) 100%) !important;
+}
+
+.bg-danger-custom {
+  background: linear-gradient(135deg, var(--tertiary-red) 0%, #c10100 100%) !important;
+}
+
+.border-danger-custom {
+  border: 2px solid var(--tertiary-red) !important;
+}
+
+.btn-close-white {
+  filter: brightness(0) invert(1);
+}
